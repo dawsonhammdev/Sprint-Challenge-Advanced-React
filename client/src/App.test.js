@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect'
 import App from './App';
 
-test('Is the Heading Visible On the Page?', () => {
+test('Is the Header Visible On the Page?', () => {
   //Arrange- Set up testing enviornment
   const { getByText } = render(<App/>)
 
@@ -10,10 +11,10 @@ test('Is the Heading Visible On the Page?', () => {
 
   //Assert
   const linkElement = getByText(/World Cup Teams Rankings/i);
-
+  expect(linkElement).toBeVisible();
 });
 
-test('Does Dark Mode Button Work?', () => {
+test('Can Dark Mode Button Be selected?', () => {
 
   const { getByText } = render(<App/>)
 
@@ -24,6 +25,8 @@ test('Does Dark Mode Button Work?', () => {
 test('Is The NavBar Visible?', () => {
   const{ getByText } = render(<App/>)
   const linkElement = getByText(/Dark Mode/i)
+
+  expect(linkElement).toBeVisible();
 })
 
 
