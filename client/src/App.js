@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from "axios"
 import PlayerCard from "./components/PlayerCard"
+import NavBar from "./components/Navbar"
 
 class App extends React.Component {
   constructor() {
@@ -27,7 +28,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className ="App">
+        <NavBar />
         <h1>World Cup Teams Rankings</h1>
         <PlayerCard player_data={this.state.players}/>
       </div>
